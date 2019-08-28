@@ -1,0 +1,1 @@
+{"type":"record","name":"MyCustomObject","namespace":"com.pichler.examples.avro.schema","fields":[{"name":"hostName","type":"string"},{"name":"ipAddress","type":"string"}]}

@@ -5,6 +5,9 @@ plugins {
 	id("io.spring.dependency-management") version "1.0.8.RELEASE"
 	kotlin("jvm") version "1.2.71"
 	kotlin("plugin.spring") version "1.2.71"
+
+	// Find latest release here: https://github.com/commercehub-oss/gradle-avro-plugin/releases
+	id("com.commercehub.gradle.plugin.avro") version "0.17.0"
 }
 
 group = "com.pichler.examples.avro"
@@ -32,3 +35,9 @@ tasks.withType<KotlinCompile> {
 	}
 }
 
+//tasks.create<com.commercehub.gradle.plugin.avro.GenerateAvroJavaTask>("generateAvroClasses" ) {
+//	source("src/avro")
+//	setOutputDir( File("dest/avro"))
+//}
+
+//compileJava.source(generateAvro.outputs)

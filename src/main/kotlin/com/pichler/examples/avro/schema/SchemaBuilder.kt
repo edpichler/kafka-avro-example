@@ -8,7 +8,7 @@ import java.nio.file.Paths
 
 
 /**
- * This class helps to create an schema.json schema.
+ * This class helps to create an schema.json schema!
  */
 fun main(args: Array<String>) {
     val schemaName = "MyCustomObject"
@@ -18,8 +18,8 @@ fun main(args: Array<String>) {
             .requiredString("hostName").requiredString("ipAddress")
             .endRecord()
 
-    val fileName = Paths.get(".").normalize().toAbsolutePath().toString() + "/src/main/resources/avro/$schemaName.json"
-    println(fileName)
+    val fileName = Paths.get(".").normalize().toAbsolutePath().toString() + "/src/main/resources/avro/$schemaName.avsc" //Schema files are saved using the .avsc extension.
+    println("The schema was wrote in: $fileName")
     File(fileName).createNewFile()
     val writer = BufferedWriter(FileWriter(fileName))
     writer.write(clientIdentifier.toString())

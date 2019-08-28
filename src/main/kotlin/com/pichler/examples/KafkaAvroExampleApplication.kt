@@ -1,4 +1,4 @@
-package com.pichler.examples.avro
+package com.pichler.examples
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -7,8 +7,8 @@ import org.springframework.scheduling.annotation.EnableScheduling
 
 @SpringBootApplication
 @EnableScheduling
-class AvroExampleApplication
+class KafkaAvroExampleApplication
 
 fun main(args: Array<String>) {
-	runApplication<AvroExampleApplication>(*args)
+	runApplication<KafkaAvroExampleApplication>(*args)
 }
