@@ -35,9 +35,6 @@ tasks.withType<KotlinCompile> {
 	}
 }
 
-//tasks.create<com.commercehub.gradle.plugin.avro.GenerateAvroJavaTask>("generateAvroClasses" ) {
-//	source("src/avro")
-//	setOutputDir( File("dest/avro"))
-//}
-
-//compileJava.source(generateAvro.outputs)
+avro {
+	//configuration goes here
+}

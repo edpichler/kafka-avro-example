@@ -15,22 +15,15 @@ import org.apache.avro.io.Encoder
 class Producer {
 
     @Scheduled(fixedRate = 1000)
-    fun todo()  {
-//        val writer = SpecificDatumWriter(MyCustomObject::class.java)
-//        var data = ByteArray(0)
-//        val stream = ByteArrayOutputStream()
-//        var jsonEncoder: Encoder? = null
-//        try {
-//            jsonEncoder = EncoderFactory.get().jsonEncoder(
-//                    AvroHttpRequest.getClassSchema(), stream)
-//            writer.write(request, jsonEncoder)
-//            jsonEncoder!!.flush()
-//            data = stream.toByteArray()
-//        } catch (e: IOException) {
-//            logger.error("Serialization error:" + e.message)
-//        }
-//
-//        return data
-        println("oi")
+    fun todo() {
+        val writer = SpecificDatumWriter(MyCustomObject::class.java)
+        val stream = ByteArrayOutputStream()
+        var jsonEncoder: Encoder? = null
+        jsonEncoder = EncoderFactory.get().jsonEncoder(
+                MyCustomObject.getClassSchema(), stream)
+        jsonEncoder!!.flush()
+
+        Queue.add(stream.toString())
+        println(stream.toString())
     }
 }

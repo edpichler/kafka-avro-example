@@ -1,0 +1,12 @@
+@namespace("com.pichler.examples.avro")
+protocol MyProtocolV1 {
+  /**
+   * Unique ID generated for this event. Enables consumers to detect duplicates.
+   *
+   * Format: UUID.
+   */
+   record MyCustomObject {
+    string name;
+    string details;
+   }
+}
